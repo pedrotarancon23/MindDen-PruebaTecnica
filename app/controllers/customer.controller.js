@@ -1,11 +1,9 @@
 const Offer = require('../models/offer.model');
 
 exports.findAll = (req, res) => {
-	// named john and at least 18
-	//MyModel.find({ name: 'john', age: { $gte: 18 }});
-	Offer.find()
+	Offer.find({score: {$gt: 40}}).sort({score: 'desc'})
 		.then(offers => {
-			res.send(offers);
+			res.status(200).send(offers);
 		})
 		.catch(err => {
 			res.status(500).send({
