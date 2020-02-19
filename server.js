@@ -39,7 +39,7 @@ app.use('/supervisor', supervisorRoutes);
 // Swagger
 app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-var port = 9999;
+var port = process.env.PORT || 9999;
 app.listen(port, () => {
 	console.log('Server is up and running on port number ' + port);
 });
