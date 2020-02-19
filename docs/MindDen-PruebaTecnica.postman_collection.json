@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "fd3b4c00-adfe-4d9a-bede-597582204c84",
+		"name": "MindDen-PruebaTecnica",
+		"description": "API portal de anuncios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Local",
+			"item": [
+				{
+					"name": "http://localhost:9999/registrar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"string\",\r\n  \"type\": \"string\",\r\n  \"imageIds\": [\r\n    0\r\n  ],\r\n  \"size\": 0,\r\n  \"height\": 0,\r\n  \"km\": 0,\r\n  \"color\": \"string\",\r\n  \"fabricant\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9999/registrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9999/customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:9999/supervisor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/supervisor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"supervisor"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Heroku",
+			"item": [
+				{
+					"name": "https://mindden-pruebatecnica.herokuapp.com/registrar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"string\",\r\n  \"type\": \"string\",\r\n  \"imageIds\": [\r\n    0\r\n  ],\r\n  \"size\": 0,\r\n  \"height\": 0,\r\n  \"km\": 0,\r\n  \"color\": \"string\",\r\n  \"fabricant\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://mindden-pruebatecnica.herokuapp.com/registrar",
+							"protocol": "https",
+							"host": [
+								"mindden-pruebatecnica",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://mindden-pruebatecnica.herokuapp.com/customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mindden-pruebatecnica.herokuapp.com/customer",
+							"protocol": "https",
+							"host": [
+								"mindden-pruebatecnica",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://mindden-pruebatecnica.herokuapp.com/supervisor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mindden-pruebatecnica.herokuapp.com/supervisor",
+							"protocol": "https",
+							"host": [
+								"mindden-pruebatecnica",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"supervisor"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
