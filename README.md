@@ -14,6 +14,8 @@ _En el documento de la arquitectura daré más detalles sobre la estructura de l
 La aplicación está desplegada en Heroku y se ha añadido Swagger para la documentación y pruebas del API. Está accesible en este enlace:
 https://mindden-pruebatecnica.herokuapp.com/swagger/
 
+**IMPORTANTE**: para probar los endpoints, se debe **seleccionar el servidor** sobre el cual se quiere ejecutar la petición. Para ello, al principio del Swagger, hay un desplegable para seleccionar localhost o Heroku.
+
 _Puede que tarde en cargar porque en el plan gratiuto de Heroku, el servidor de la aplicación se apaga tras 30 minutos de inactividad, por lo que puede que tenga que iniciarse._
 
 Además, en [docs/MindDen-PruebaTecnica.postman_collection.json](https://github.com/pedrotarancon23/MindDen-PruebaTecnica/blob/master/docs/MindDen-PruebaTecnica.postman_collection.json) se ha incluido una colección de Postman para hacer peticiones a los tres endpoins mencionados anteriormente.
