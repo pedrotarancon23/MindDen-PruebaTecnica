@@ -1,0 +1,222 @@
+{
+	"openapi": "3.0.1",
+	"info": {
+		"title": "MindDen - Prueba técnica",
+		"description": "API portal de anuncios",
+		"license": {
+			"name": "Autor: Pedro Rafael Tarancón Baeza"
+		},
+		"version": "1.0.0"
+	},
+	"servers": [
+		{
+			"url": "http://localhost:9999/",
+			"description": "Local"
+		},
+		{
+			"url": "UrlHeroku",
+			"description": "Heroku"
+		}
+	],
+	"tags": [
+		{
+			"name": "Registrar",
+			"description": "API para registrador de anuncios"
+		},
+		{
+			"name": "Customer",
+			"description": "API para el cliente"
+		},
+		{
+			"name": "Supervisor",
+			"description": "API para el supervisor del portal"
+		}
+	],
+	"paths": {
+		"/registrar": {
+			"post": {
+				"tags": [
+					"Registrar"
+				],
+				"summary": "Crea un nuevo anuncio",
+				"description": "Guarda en la base de datos un anuncio.",
+				"operationId": "createOffer",
+				"requestBody": {
+					"description": "Anuncio que se quiere crear",
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/Offer"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"201": {
+						"description": "Oferta creada",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Offer"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "Error al insertar en la BD",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/customer": {
+			"get": {
+				"tags": [
+					"Customer"
+				],
+				"summary": "Ver los anuncios relevantes ordenados de mejor a peor",
+				"description": "Devuelve un array con los anuncios relevantes",
+				"operationId": "findAllRelevant",
+				"responses": {
+					"200": {
+						"description": "Resultados obtenidos correctamente",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/Offer"
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "Error al leer de la BD",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/supervisor": {
+			"get": {
+				"tags": [
+					"Supervisor"
+				],
+				"summary": "Ver los anuncios irrelevantes ordenados de más reciente a más antiguo",
+				"description": "Devuelve un array con los anuncios irrelevantes",
+				"operationId": "findAllIrrelevant",
+				"responses": {
+					"200": {
+						"description": "Resultados obtenidos correctamente",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/Offer"
+									}
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "Error al leer de la BD",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Error"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"Offer": {
+				"required": [
+					"type"
+				],
+				"type": "object",
+				"properties": {
+					"description": {
+						"type": "string"
+					},
+					"type": {
+						"type": "string"
+					},
+					"imageIds": {
+						"type": "array",
+						"items": {
+							"type": "number"
+						}
+					},
+					"size": {
+						"type": "number"
+					},
+					"height": {
+						"type": "number"
+					},
+					"km": {
+						"type": "number"
+					},
+					"color": {
+						"type": "string"
+					},
+					"fabricant": {
+						"type": "string"
+					},
+					"score": {
+						"type": "string"
+					}
+				}
+			},
+			"Image": {
+				"required": [
+					"customId",
+					"url",
+					"quality"
+				],
+				"type": "object",
+				"properties": {
+					"customId": {
+						"type": "number"
+					},
+					"url": {
+						"type": "string"
+					},
+					"quality": {
+						"type": "string"
+					}
+				}
+			},
+			"Error": {
+				"required": [
+					"message"
+				],
+				"type": "object",
+				"properties": {
+					"message": {
+						"type": "string"
+					}
+				}
+			}
+		}
+	}
+}

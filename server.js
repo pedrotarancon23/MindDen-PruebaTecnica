@@ -9,6 +9,10 @@ const registrarRoutes = require('./app/routes/registrar.route');
 const customerRoutes = require('./app/routes/customer.route');
 const supervisorRoutes = require('./app/routes/supervisor.route');
 
+// Swagger
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./docs/swagger.json');
+
 const app = express();
 
 // Set up mongoose connection
@@ -31,6 +35,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use('/registrar', registrarRoutes);
 app.use('/customer', customerRoutes);
 app.use('/supervisor', supervisorRoutes);
+
+// Swagger
+app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 var port = 9999;
 app.listen(port, () => {
