@@ -14,7 +14,7 @@
 			"description": "Local"
 		},
 		{
-			"url": "UrlHeroku",
+			"url": "https://mindden-pruebatecnica.herokuapp.com/",
 			"description": "Heroku"
 		}
 	],
