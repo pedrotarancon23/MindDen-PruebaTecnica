@@ -6,7 +6,7 @@ He decidido simplificar la implementación. Por este motivo, la aplicación se h
 
 La implementación se ha hecho utilizando NodeJS y MongoDB como base de datos (utilizando mLab como proveedor Database-as-a-Service).
 
-_En el documento de la arquitectura daré más detalles sobre la estructura de la aplicación y cómo lo haría en un entorno real._
+_En el [documento de la arquitectura](https://github.com/pedrotarancon23/MindDen-PruebaTecnica/blob/master/docs/DocumentoArquitectura.pdf) se han incluido más detalles sobre la implementación y se propone una arquitectura basada en microservicios para implantar la aplicación en un entorno real._
 
 
 ## Acceso aplicación
